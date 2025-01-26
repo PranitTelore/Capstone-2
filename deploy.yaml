@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-deplyment
+  labels:
+    app: my-deplyment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: my-deplyment
+  template:
+    metadata:
+      labels:
+        app: my-deplyment
+    spec:
+      containers:
+      - name: my-deplyment
+        image: pranittelore/project2
+        ports:
+        - containerPort: 80
